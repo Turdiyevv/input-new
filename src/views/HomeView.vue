@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card ref="form" width="500px" height="330px" class="mx-auto mt-16">
-      <v-card-title >login <i class="ml-3">{{ errorMessage }}</i></v-card-title>
+      <v-card-title class="pb-9">login <i class="ml-3">{{ errorMessage }}</i></v-card-title>
       <v-card-text>
         <v-text-field
           label="login" v-model="addName"
@@ -17,7 +17,7 @@
         </v-text-field>
         <v-checkbox v-model="Disabled"
           color="blue accent-2" label="Do you agree?"
-          class="ma-0">
+          class="checkbox" >
         </v-checkbox>
         <div class="btns">
           <v-btn text @click="reset">Clear</v-btn>
@@ -65,9 +65,17 @@ export default {
       this.addName = ''
       this.password = ''
       this.Disabled = false
-      this.$refs.form.reset()
     }
   }
 }
 
 </script>
+
+<style scoped>
+  .checkbox {
+    max-width: 160px;
+  }
+  .btns {
+    float: right;
+  }
+</style>

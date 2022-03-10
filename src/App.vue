@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main class="main">
+    <v-main class="grey lighten-3">
       <router-view/>
     </v-main>
   </v-app>
@@ -16,9 +16,3 @@ export default {
   })
 }
 </script>
-
-<style>
-  .main {
-    background-color: cadetblue;
-  }
-</style>

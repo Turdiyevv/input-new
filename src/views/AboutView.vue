@@ -1,13 +1,16 @@
 <template>
   <div class="about">
+    <v-app-bar height="34">
+      <v-btn small text @click="goHome"><v-icon> mdi-arrow-left</v-icon></v-btn>
+    </v-app-bar>
     <v-data-table
-    hide-default-footer
-    v-model="selected"
-    :headers="headers"
-    :items="desserts"
-    item-key="name"
-    show-select
-    class="elevation-1">
+      hide-default-footer
+      v-model="selected"
+      :headers="headers"
+      :items="desserts"
+      item-key="name"
+      show-select
+      class="elevation-1 ma-2">
     </v-data-table>
   </div>
 </template>
@@ -55,6 +58,11 @@ export default {
         { name: 'vshbvc', calories: 356, fat: 16.0, carbs: 49, protein: 3.9, iron: '16%' },
         { name: 'alsj', calories: 356, fat: 16.0, carbs: 49, protein: 3.9, iron: '16%' }
       ]
+    }
+  },
+  methods: {
+    goHome () {
+      this.$router.push({ name: 'home' })
     }
   }
 }
