@@ -8,7 +8,7 @@
         <div class="text2">ИМЯ ПОЛЬЗОВАТЕЛЯ</div>
         <v-text-field
           class="pb-2"
-          label="number" v-model="addName"
+          label="количество" v-model="addName"
           placeholder="998 xxx xx xx" outlined dense
           :rules="nameRules" :counter="15">
         </v-text-field>
@@ -16,7 +16,7 @@
         <span class="text2 float-right"> <a href="http://gmail.com">Забыли пароль?</a></span>
         <v-text-field
           :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-          label="Password" v-model="password"
+          label="Пароль" v-model="password"
           placeholder="input password" outlined dense
           :rules="lastNameRUles" :counter="10"
           @click:append="show = !show" :type="show ? 'text' : 'password'">
@@ -49,14 +49,14 @@ export default {
       addName: '',
       password: '',
       Disabled: false,
-      nameRules: [v => !!v || 'fill in this space',
-        v => (!!v && v.length <= 15) || 'You can use up to 15 characters',
-        v => (!!v && v.length >= 4) || 'write in full'
+      nameRules: [v => !!v || 'заполнить это пространство',
+        v => (!!v && v.length <= 15) || 'Вы можете использовать до 15 символов',
+        v => (!!v && v.length >= 4) || 'напишите полностью'
       ],
       lastNameRUles: [
-        v => !!v || 'fill in this space',
-        v => (!!v && v.length <= 10) || 'You can use up to 10 characters',
-        v => (!!v && v.length >= 4) || 'You must use more than 4 characters'
+        v => !!v || 'заполнить это пространство',
+        v => (!!v && v.length <= 10) || 'Вы можете использовать до 10 символов',
+        v => (!!v && v.length >= 4) || 'Вы должны использовать более 4 символов'
       ]
     }
   },
